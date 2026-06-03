@@ -8,7 +8,7 @@ document.getElementById("topPlayers");
 
 function loadLeaderboard(){
 
-    fetch("http://localhost:5000/performance/leaderboard")
+    fetch("https://pitch-booker.onrender.com/performance/leaderboard")
 
     .then(res => {
 
