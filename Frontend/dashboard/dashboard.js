@@ -50,7 +50,7 @@ function showToast(message){
 /* ================= LOAD BOOKINGS ================= */
 function loadBookings(){
 
-    fetch(`http://localhost:5000/bookings/user/${user.email}`)
+    fetch(`https://pitch-booker.onrender.com/bookings/user/${user.email}`)
 
     .then(res => res.json())
 
@@ -259,7 +259,7 @@ function renderChart(bookings){
 }
 function cancelBooking(id){
 
-    fetch(`http://localhost:5000/bookings/${id}`,{
+    fetch(`https://pitch-booker.onrender.com/bookings/${id}`,{
 
         method:"DELETE"
 
