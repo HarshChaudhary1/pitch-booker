@@ -1,0 +1,344 @@
+/* RESET */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background: #eef2f7;
+}
+
+/* ================= NAVBAR ================= */
+
+.nav_menu li a {
+    position: relative;
+}
+
+.nav_menu li a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 0%;
+    height: 2px;
+    background: #fca311;
+    transition: 0.3s;
+}
+
+.nav_menu li a:hover::after {
+    width: 100%;
+}
+
+nav {
+    width: 100%;
+    background: #0d1b2a;
+    padding: 15px 0;
+}
+
+.nav_container {
+    width: 95%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo h3 {
+    color: white;
+    font-size: 24px;
+    letter-spacing: 1px;
+}
+
+.nav_menu {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.nav_menu li a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+.nav_menu li a:hover {
+    color: #fca311;
+}
+
+/* ================= PAGE CONTAINER ================= */
+
+.container_leaderboard {
+    width: 100%;
+    margin: auto;
+}
+
+/* ================= TOP 3 PLAYERS ================= */
+
+
+
+
+
+/* PLAYER IMAGE */
+
+header img {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 12px;
+    border: 3px solid #ddd;
+}
+
+/* PLAYER TEXT */
+
+header p {
+    font-weight: bold;
+    color: #0d1b2a;
+}
+
+/* RANK STYLING */
+
+.top_players {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 40px;
+    padding: 50px;
+    margin-top: 60px;
+    background: linear-gradient(to right, #0d1b2a, #1b263b);
+}
+
+/* Player Card */
+
+.player-card {
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+    width: 220px;
+    transition: 0.3s;
+    color: #000;
+}
+
+.player-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Player Image */
+
+.player_card img {
+    border-radius: 50%;
+    transition: 0.3s;
+}
+
+.player_card:hover img {
+    transform: scale(1.08);
+}
+
+/* Rank 1 Bigger */
+
+.rank1 {
+    background: linear-gradient(135deg, #FFD700, #FFB300);
+    transform: scale(1.15);
+    box-shadow: 0 10px 30px rgba(255, 215, 0, 0.6);
+    animation: shine 3s infinite alternate;
+}
+
+.rank1 a,
+.rank2 a,
+.rank3 a {
+    text-decoration: none;
+    color: #000;
+}
+
+/* 🥈 Rank 2 - Silver */
+.rank2 {
+    background: linear-gradient(135deg, #C0C0C0, #9e9e9e);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* 🥉 Rank 3 - Bronze */
+.rank3 {
+    background: linear-gradient(135deg, #CD7F32, #a55b2a);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+@keyframes shine {
+    from {
+        box-shadow: 0 0 20px gold;
+    }
+
+    to {
+        box-shadow: 0 0 40px gold;
+    }
+}
+
+.rank1 img {
+    border: 3px solid gold;
+}
+
+.rank2 img {
+    border: 3px solid silver;
+}
+
+.rank3 img {
+    border: 3px solid #cd7f32;
+}
+
+/* Medal */
+
+.medal {
+    font-size: 24px;
+    display: block;
+    margin-bottom: 10px;
+    transition: 0.3s;
+}
+
+
+.player_card:hover .medal {
+    transform: rotate(10deg) scale(1.2);
+}
+
+/* ================= LEADERBOARD TABLE ================= */
+.leaderboard_banner {
+    text-align: center;
+    padding: 40px;
+}
+
+.leaderboard_banner h1 {
+    font-size: 36px;
+    color: #0d1b2a;
+}
+
+.leaderboard_banner p {
+    color: #555;
+}
+
+.leaderboard_table td:nth-child(4) {
+    font-weight: bold;
+    color: #0d1b2a;
+}
+
+.leaderboard_table tbody tr {
+    transition: 0.2s;
+}
+
+.leaderboard_table tbody tr:hover {
+    background: #f1f5ff;
+}
+
+.leaderboard_section {
+    margin-top: 70px;
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+.leaderboard_section h2 {
+    margin-bottom: 25px;
+    color: #0d1b2a;
+    font-size: 28px;
+}
+
+/* TABLE */
+
+.leaderboard_table {
+
+    padding: 20px;
+    border-radius: 12px;
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+/* TABLE HEADER */
+
+.leaderboard_table thead {
+    background: linear-gradient(90deg, #0f2027, #203a43, #2c5364);
+    color: white;
+    font-weight: 600;
+}
+
+.leaderboard_table th {
+    padding: 15px;
+}
+
+/* TABLE DATA */
+
+.leaderboard_table td {
+    padding: 15px;
+    border-bottom: 1px solid #eee;
+}
+
+.leaderboard_table td a {
+    color: #0d1b2a;
+    text-decoration: none;
+}
+
+.leaderboard_table tbody tr:nth-child(even) {
+    background: #f5f7fb;
+}
+
+.leaderboard_table tbody tr:nth-child(odd) {
+    background: #ffffff;
+}
+
+/* HOVER EFFECT */
+
+.leaderboard_table tbody tr {
+    transition: 0.3s;
+}
+
+.leaderboard_table tbody tr:hover {
+    background: #e3f2fd;
+    transform: scale(1.01);
+    cursor: pointer;
+}
+
+/* PAGINATION */
+.pagination{
+text-align:center;
+margin-top:20px;
+}
+
+.pagination button{
+padding:8px 12px;
+margin:3px;
+border:none;
+background:#2c5364;
+color:white;
+border-radius:5px;
+cursor:pointer;
+}
+
+.pagination button:hover{
+background:#1b263b;
+}
+
+.player-card:hover{
+
+    transform: translateY(-10px)
+    scale(1.03);
+
+}
+
+.top_players{
+
+    min-height: 350px;
+
+}
+
+
+/* ================= FOOTER ================= */
+
+footer {
+    background: #0d1b2a;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}

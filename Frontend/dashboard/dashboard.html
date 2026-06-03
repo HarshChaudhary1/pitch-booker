@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav>
+    <div class="nav_container">
+        <h3>Pitch Booker</h3>
+    </div>
+</nav>
+
+
+<button class="back_btn" onclick="goBack()">←</button>
+<div class="dashboard_container">
+
+    <h2>My Bookings</h2>
+
+    <!-- STATS -->
+    <div class="stats">
+        <div class="stat_card">
+            <h3 id="totalBookings">0</h3>
+            <p>Total Bookings</p>
+        </div>
+    </div>
+
+<div class="charts_container">
+
+    <div class="chart_card">
+        <h3>Booking Activity</h3>
+        <canvas id="bookingChart"></canvas>
+    </div>
+
+    <div class="chart_card">
+        <h3>Popular Time Slots</h3>
+        <canvas id="slotChart"></canvas>
+    </div>
+
+</div>
+    
+<div id="toast" class="toast">
+    Booking Successful
+    <div class="toast_progress"></div>
+</div>
+    <!-- BOOKINGS LIST -->
+    <div id="bookingList"></div>
+
+</div>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script src="dashboard.js"></script>
+
+</body>
+</html>

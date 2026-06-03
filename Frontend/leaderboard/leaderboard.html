@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leaderboard</title>
+    <link rel="stylesheet" href="leaderboard.css">
+</head>
+
+<body>
+    <div class="container_leaderboard">
+        <nav>
+
+            <div class="nav_container">
+
+                <div class="logo">
+                    <h3>Pitch Booker</h3>
+                </div>
+
+                <div class="nav_menu_container">
+
+                    <ul class="nav_menu">
+
+                        <li>
+                            <a href="/home/index.html">Home</a>
+                        </li>
+
+                        <li>
+                            <a href="/find ground/find-grounds.html">Find Grounds</a>
+                        </li>
+
+                        <li>
+                            <a href="how-it-works.html">How It Works</a>
+                        </li>
+
+                        <li>
+                            <a href="leaderboard.html">Leaderboard</a>
+                        </li>
+
+                        <li>
+                            <a href="register-ground.html">Register Grounds</a>
+                        </li>
+
+                        <li>
+                            <a href="/login/login.html">Login / Sign Up</a>
+                        </li>
+
+                    </ul>
+
+                </div>
+
+            </div>
+
+        </nav>
+      
+
+           <header class="top_players" id="topPlayers">
+
+</header>
+
+       
+        <main>
+            <div class="container_leaderboard">
+                <section id="leaderboard" class="leaderboard_section">
+
+                    <h2> Player Leaderboard</h2>
+
+                    <table class="leaderboard_table" id="leaderboard_table_id">
+
+                        <thead>
+                            <tr>
+                                <th>Rank</th>
+                                <th>Player</th>
+                                <th>Matches</th>
+                                <th>Runs</th>
+                                <th>Wickets</th>
+                                <th>Strike Rate</th>
+                                <th>Ground</th>
+                            </tr>
+                        </thead>
+
+<tbody id="leaderboardBody">
+
+</tbody>
+
+                    </table>
+
+                    <div class="pagination" id="pagination_id">
+                        <button id="prevBtn">Prev</button>
+                        <span id="pageNumbers"></span>
+                        <button id="nextBtn">Next</button>
+                    </div>
+
+                </section>
+            </div>
+        </main>
+        <footer>
+           © 2026 Pitch Booker | Smart Cricket Ground Booking & Performance Tracking Platform
+        </footer>
+    </div>
+    <script src="leaderboard.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,248 @@
+/* RESET */
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial;
+}
+
+body{
+background:
+linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),
+url("https://images.unsplash.com/photo-1540747913346-19e32dc3e97e");
+
+background-size:cover;
+background-position:center;
+min-height:100vh;
+}
+
+
+
+/* NAVBAR */
+nav{
+background:#0d1b2a;
+padding:15px;
+color:white;
+text-align:center;
+}
+
+/* BACK BUTTON */
+
+.back_button_container{
+    width:90%;
+    margin:20px auto 0;
+    display:flex;
+    justify-content:space-between; /* 🔥 LEFT + RIGHT */
+    align-items:center;
+}
+
+.back_btn{
+    padding:10px 18px;
+    border:none;
+    background:#0d1b2a;
+    color:white;
+    border-radius:6px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.back_btn:hover{
+    background:#1b263b;
+    transform:translateX(-5px);
+}
+
+.dashboard_btn{
+    padding:10px 16px;
+    border:none;
+    background:#fca311;
+    color:black;
+    border-radius:6px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.dashboard_btn:hover{
+    background:#ffba42;
+    transform:translateY(-2px);
+}
+
+
+/* CONTAINER */
+.booking_container{
+width:400px;
+margin:40px auto;
+
+background:rgba(255,255,255,0.15);
+
+backdrop-filter:blur(10px);
+
+padding:25px;
+
+border-radius:15px;
+
+box-shadow:0 8px 25px rgba(0,0,0,0.3);
+
+transition:0.3s;
+
+color:white;
+}
+
+
+/* HEADINGS */
+.booking_container h2{
+text-align:center;
+margin-bottom:20px;
+}
+
+
+.booking_container:hover{
+transform:translateY(-5px);
+}
+
+
+/* GROUND INFO */
+.ground_info{
+text-align:center;
+margin-bottom:20px;
+}
+
+
+.ground_info img{
+    width:100%;
+    height:180px;
+    object-fit:cover;
+    border-radius:10px;
+    margin-bottom:15px;
+}
+
+
+/* FORM */
+.form_group{
+margin-bottom:20px;
+}
+
+.error{
+    color:red;
+    font-size:13px;
+    margin-top:5px;
+    display:block;
+}
+
+label{
+display:block;
+margin-bottom:5px;
+}
+
+/* INPUT */
+
+input{
+width:100%;
+padding:12px;
+border:none;
+border-radius:8px;
+background:rgba(255,255,255,0.8);
+font-size:15px;
+}
+
+
+/* SLOTS */
+.slots{
+display:flex;
+flex-wrap:wrap;
+gap:10px;
+}
+
+.slot{
+padding:10px 14px;
+border:none;
+background:white;
+border-radius:8px;
+cursor:pointer;
+transition:0.3s;
+font-weight:bold;
+}
+
+.slot:hover{
+transform:translateY(-3px);
+background:#fca311;
+}
+
+.slot.active{
+background:#fca311;
+color:black;
+}
+
+/* BOOKING SUMMARY */
+.booking_summary{
+    background:#f5f5f5;
+    padding:15px;
+    border-radius:8px;
+    margin-bottom:20px;
+}
+
+.booking_summary h4{
+    margin-bottom:10px;
+    color:#0d1b2a;
+}
+
+
+/* BUTTON */
+.confirm_btn{
+width:100%;
+padding:14px;
+background:#fca311;
+color:black;
+border:none;
+border-radius:8px;
+cursor:pointer;
+font-size:16px;
+font-weight:bold;
+transition:0.3s;
+}
+
+.confirm_btn:hover{
+transform:scale(1.02);
+background:#ffba42;
+}
+
+
+
+.toast{
+    position:fixed;
+    bottom:20px;
+    right:20px;
+    background:#4caf50;
+    color:white;
+    padding:12px 20px;
+    border-radius:5px;
+    opacity:0;
+    transition:0.3s;
+    overflow:hidden;
+}
+
+/* SHOW */
+.toast.show{
+    opacity:1;
+}
+
+/* PROGRESS BAR */
+.toast_progress{
+    position:absolute;
+    bottom:0;
+    left:0;
+    height:4px;
+    width:100%;
+    background:#ffffff;
+    animation:progress 3s linear forwards;
+}
+
+/* ANIMATION */
+@keyframes progress{
+    from{
+        width:100%;
+    }
+    to{
+        width:0%;
+    }
+}

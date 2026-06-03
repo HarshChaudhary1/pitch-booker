@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Ground</title>
+    <link rel="stylesheet" href="booking.css">
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav>
+        <div class="nav_container">
+            <h3>Pitch Booker</h3>
+        </div>
+    </nav>
+
+    <div class="back_button_container">
+        <button class="back_btn" onclick="window.location='/find ground/find-grounds.html'">
+            ←
+        </button>
+         <button class="dashboard_btn" onclick="goToDashboard()">
+        View My Bookings
+    </button>
+
+    </div>
+    
+    <!-- BOOKING CONTAINER -->
+
+    <div class="booking_container">
+
+        <h2>Book Your Ground</h2>
+
+        <!-- Ground Info -->
+
+               <div class="ground_info">
+
+    <img id="groundImage">
+
+    <h3 id="groundName"></h3>
+
+    <p id="groundLocation"></p>
+
+    <p id="groundPrice"></p>
+
+</div>
+
+
+        <!-- TIME SLOTS -->
+        <div class="form_group">
+            <label>Select Date</label>
+            <input type="date" id="bookingDate">
+            <span class="error" id="dateError"></span>
+        </div>
+
+        <div class="form_group">
+            <label>Select Time Slot</label>
+            <div class="slots">
+                <button class="slot">6 AM - 8 AM</button>
+                <button class="slot">8 AM - 10 AM</button>
+                <button class="slot">10 AM - 12 PM</button>
+            </div>
+            <span class="error" id="slotError"></span>
+        </div>
+
+
+        <!-- CONFIRM -->
+        <button class="confirm_btn">Confirm Booking</button>
+
+
+    </div>
+    <div id="toast" class="toast">
+        Booking Successful
+        <div class="toast_progress"></div>
+    </div>
+
+    <script src="booking.js"></script>
+</body>
+
+</html>

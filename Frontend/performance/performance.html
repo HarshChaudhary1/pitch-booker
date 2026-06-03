@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+    content="width=device-width, initial-scale=1.0">
+
+    <title>Performance</title>
+
+    <link rel="stylesheet"
+    href="performance.css">
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="performance_card">
+
+            <h2>Add Match Performance</h2>
+
+            <form id="performanceForm">
+
+                <input
+                type="number"
+                id="matches"
+                placeholder="Matches Played"
+                required>
+
+                <input
+                type="number"
+                id="runs"
+                placeholder="Runs"
+                required>
+
+                <input
+                type="number"
+                id="wickets"
+                placeholder="Wickets"
+                required>
+
+                <input
+                type="number"
+                id="strikeRate"
+                placeholder="Strike Rate"
+                required>
+
+                <button type="submit">
+                    Save Performance
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+    <div id="toast"></div>
+
+<script src="performance.js"></script>
+
+</body>
+
+</html>

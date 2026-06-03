@@ -1,0 +1,207 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+/* ================= BODY ================= */
+
+body{
+
+    height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:
+    linear-gradient(rgba(0,0,0,0.6),
+    rgba(0,0,0,0.6)),
+
+    url("https://images.unsplash.com/photo-1540747913346-19e32dc3e97e");
+
+    background-size:cover;
+
+    background-position:center;
+
+    overflow:hidden;
+}
+
+/* ================= OVERLAY ================= */
+
+.overlay{
+
+    width:100%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+}
+
+/* ================= CARD ================= */
+
+.performance_card{
+
+    width:420px;
+
+    background:rgba(255,255,255,0.1);
+
+    backdrop-filter:blur(10px);
+
+    padding:40px;
+
+    border-radius:20px;
+
+    box-shadow:0 8px 30px rgba(0,0,0,0.3);
+
+    border:1px solid rgba(255,255,255,0.2);
+
+    animation:fadeIn 0.8s ease;
+
+}
+
+/* ================= HEADING ================= */
+
+.performance_card h2{
+
+    text-align:center;
+
+    color:white;
+
+    margin-bottom:10px;
+
+    font-size:30px;
+
+}
+
+.subtitle{
+
+    text-align:center;
+
+    color:#ddd;
+
+    margin-bottom:30px;
+
+}
+
+/* ================= FORM ================= */
+
+form{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:18px;
+
+}
+
+/* ================= INPUT ================= */
+
+input{
+
+    padding:14px;
+
+    border:none;
+
+    border-radius:8px;
+
+    font-size:15px;
+
+    outline:none;
+
+    background:rgba(255,255,255,0.9);
+
+}
+
+/* ================= BUTTON ================= */
+
+button{
+
+    padding:14px;
+
+    border:none;
+
+    border-radius:8px;
+
+    background:#fca311;
+
+    color:white;
+
+    font-size:16px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    transition:0.3s;
+
+}
+
+button:hover{
+
+    background:#ffba42;
+
+    transform:translateY(-2px);
+
+}
+
+/* ================= TOAST ================= */
+
+#toast{
+
+    position:fixed;
+
+    top:30px;
+
+    right:-400px;
+
+    background:#0d1b2a;
+
+    color:white;
+
+    padding:16px 25px;
+
+    border-radius:8px;
+
+    transition:0.5s;
+
+    box-shadow:0 5px 20px rgba(0,0,0,0.3);
+
+    z-index:1000;
+
+}
+
+#toast.show{
+
+    right:30px;
+
+}
+
+/* ================= ANIMATION ================= */
+
+@keyframes fadeIn{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(30px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}

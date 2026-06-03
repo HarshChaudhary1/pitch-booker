@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find Grounds</title>
+    <link rel="stylesheet" href="find-grounds.css">
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav>
+        <div class="nav_container">
+            <div class="logo">
+                <h3>Pitch Booker</h3>
+            </div>
+
+            <ul class="nav_menu">
+                <li><a href="/home/index.html">Home</a></li>
+                <li><a href="find-grounds.html">Find Grounds</a></li>
+                <li><a href="/leaderboard/leaderboard.html">Leaderboard</a></li>
+                <li id="navUser"></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- FILTER SECTION -->
+    <section class="hero_find">
+        <h1>Find Your Perfect Cricket Ground</h1>
+        <p>Book grounds near you in seconds</p>
+    </section>
+
+    <section class="filters">
+
+        <input type="text" id="searchInput" placeholder="Search by location...">
+
+        <select id="typeFilter">
+            <option value="all">All Grounds</option>
+            <option value="turf">Turf</option>
+            <option value="cement">Cement</option>
+        </select>
+
+        <select id="priceFilter">
+            <option value="all">All</option>
+            <option value="low">Below ₹500</option>
+            <option value="mid">₹500 - ₹1000</option>
+        </select>
+    </section>
+
+    <!-- GROUNDS LIST -->
+    <section class="grounds_container">
+
+        <!-- CARD 1 -->
+        <div class="ground_card" data-location="delhi" data-type="turf" data-price="800">
+            <img src="https://png.pngtree.com/thumb_back/fh260/background/20250705/pngtree-cricket-stadium-at-night-filled-with-spectators-and-bright-spotlights-illuminating-image_17468260.webp">
+            <h3>Turf Arena
+                <span class="badge">Turf</span>
+            </h3>
+            <p>Delhi</p>
+            <p> ₹800/hour</p>
+            <p> 4.5</p>
+            <button onclick="bookGround(
+'Turf Arena',
+'Delhi',
+'800',
+'https://png.pngtree.com/thumb_back/fh260/background/20250705/pngtree-cricket-stadium-at-night-filled-with-spectators-and-bright-spotlights-illuminating-image_17468260.webp'
+)">
+                Book Now
+            </button>
+        </div>
+
+        <!-- CARD 2 -->
+        <div class="ground_card" data-location="mumbai" data-type="turf" data-price="300">
+            <img src="https://www.cric-life.com/wp-content/uploads/2020/10/largest-cricket-grounds-in-india.jpeg">
+            <h3>Green Field
+                <span class="badge">Turf</span>
+            </h3>
+            <p> Mumbai</p>
+            <p> ₹300/hour</p>
+            <p> 4.2</p>
+            <button onclick="bookGround(
+'Green Field',
+'Mumbai',
+'600',
+'https://www.cric-life.com/wp-content/uploads/2020/10/largest-cricket-grounds-in-india.jpeg'
+)">
+                Book Now
+            </button>
+        </div>
+
+        <!-- CARD 3 -->
+        <div class="ground_card" data-location="bangalore" data-type="turf" data-price="2000">
+            <img src="https://static.vecteezy.com/system/resources/thumbnails/070/686/267/small/empty-stadium-perspective-at-night-with-green-grass-field-and-bright-floodlights-photo.jpeg">
+            <h3>Super Turf
+                <span class="badge">Turf</span>
+            </h3>
+            <p> Bangalore</p>
+            <p> ₹2000/hour</p>
+            <p> 4.8</p>
+            <button onclick="bookGround(
+'Super Turf',
+'Bangalore',
+'1000',
+'https://static.vecteezy.com/system/resources/thumbnails/070/686/267/small/empty-stadium-perspective-at-night-with-green-grass-field-and-bright-floodlights-photo.jpeg'
+)">
+                Book Now
+            </button>
+        </div>
+
+        <p id="noResults" style="text-align:center; display:none;">
+            No grounds found
+        </p>
+
+    </section>
+    <script src="find_grounds.js"></script>
+
+</body>
+
+</html>
