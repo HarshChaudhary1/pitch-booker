@@ -94,7 +94,7 @@ function showToast(message = "Booking Successful ✅") {
 // ================= BLOCK BOOKED SLOTS =================
 function blockBookedSlots(selectedDate){
 
-    fetch("http://localhost:5000/bookings")
+    fetch("https://pitch-booker.onrender.com/bookings")
 
     .then(res => res.json())
 
@@ -202,7 +202,7 @@ confirmBtn.addEventListener("click", () => {
     };
 
     // ================= SAVE TO BACKEND =================
-    fetch("http://localhost:5000/bookings", {
+    fetch("https://pitch-booker.onrender.com/bookings", {
 
         method: "POST",
 
