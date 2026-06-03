@@ -8,7 +8,7 @@ signupForm.addEventListener("submit", (e)=>{
     let email = document.getElementById("email").value;
     let password = document.getElementById("password").value;
 
-    fetch("http://localhost:5000/users/signup",{
+    fetch("https://pitch-booker.onrender.com/users/signup",{
 
         method:"POST",
 
