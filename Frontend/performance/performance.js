@@ -1,100 +1,72 @@
-const express = require("express");
+/* ================= CHECK LOGIN ================= */
 
-const router = express.Router();
+let loggedInUser = JSON.parse(localStorage.getItem("loggedInUser"));
 
-const db = require("../db");
+if (!loggedInUser) {
+    window.location = "/login/login.html";
+}
 
-/* ================= SAVE PERFORMANCE ================= */
+/* ================= FORM SUBMIT ================= */
 
-router.post("/", (req,res)=>{
+let performanceForm = document.getElementById("performanceForm");
 
-    let {
-        user_email,
-        matches_played,
-        runs,
-        wickets,
-        strike_rate
-    } = req.body;
+performanceForm.addEventListener("submit", (e) => {
 
-    let sql = `
-        INSERT INTO performance
-        (
-            user_email,
+    e.preventDefault();
+
+    let matches_played = document.getElementById("matches").value;
+    let runs           = document.getElementById("runs").value;
+    let wickets        = document.getElementById("wickets").value;
+    let strike_rate    = document.getElementById("strikeRate").value;
+
+    fetch("https://pitch-booker.onrender.com/performance", {
+
+        method: "POST",
+
+        headers: { "Content-Type": "application/json" },
+
+        body: JSON.stringify({
+            user_email: loggedInUser.email,
             matches_played,
             runs,
             wickets,
             strike_rate
-        )
-        VALUES (?, ?, ?, ?, ?)
-    `;
+        })
 
-    db.query(
-        sql,
-        [
-            user_email,
-            matches_played,
-            runs,
-            wickets,
-            strike_rate
-        ],
-        (err,result)=>{
+    })
 
-            if(err){
+    .then(res => res.text())
 
-                console.log(err);
+    .then(data => {
 
-                res.status(500).send(
-                    "Performance Save Failed"
-                );
+        showToast("Performance Saved ✅");
 
-            } else {
+        // ✅ Redirect to leaderboard after 1.5 seconds
+        setTimeout(() => {
+            window.location = "/leaderboard/leaderboard.html";
+        }, 1500);
 
-                res.send(
-                    "Performance Saved ✅"
-                );
+    })
 
-            }
-
-        }
-    );
-
-});
-
-/* ================= LEADERBOARD ================= */
-
-router.get("/leaderboard",(req,res)=>{
-
-    let sql = `
-        SELECT 
-            users.name,
-            performance.matches_played,
-            performance.runs,
-            performance.wickets,
-            performance.strike_rate
-
-        FROM performance
-
-        INNER JOIN users
-
-        ON performance.user_email = users.email
-
-        ORDER BY performance.runs DESC
-    `;
-
-    db.query(sql,(err,result)=>{
-
-        if(err){
-
-            console.log(err);
-
-            return res.status(500).send("Database Error");
-
-        }
-
-        res.json(result);
-
+    .catch(err => {
+        console.log(err);
+        showToast("Save Failed ❌");
     });
 
 });
 
-module.exports = router;
+/* ================= SHOW TOAST ================= */
+
+function showToast(message) {
+
+    let toast = document.getElementById("toast");
+
+    toast.innerText = message;
+
+    toast.classList.add("show");
+
+    setTimeout(() => {
+        toast.classList.remove("show");
+    }, 3000);
+
+}
