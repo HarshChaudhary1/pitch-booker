@@ -41,7 +41,6 @@ performanceForm.addEventListener("submit", (e) => {
 
         showToast("Performance Saved ✅");
 
-        // ✅ Redirect to leaderboard after 1.5 seconds
         setTimeout(() => {
             window.location = "/leaderboard/leaderboard.html";
         }, 1500);
