@@ -38,6 +38,22 @@ nav {
     padding: 15px 0;
 }
 
+.user_profile{
+    display:flex;
+    align-items:center;
+    gap:10px;
+
+    background:#fca311;
+
+    padding:8px 14px;
+
+    border-radius:30px;
+
+    font-weight:bold;
+
+    color:black;
+}
+
 .nav_container {
     width: 95%;
     margin: auto;
