@@ -4,6 +4,18 @@ document.getElementById("leaderboardBody");
 let topPlayers =
 document.getElementById("topPlayers");
 
+
+let loggedInUser = JSON.parse(localStorage.getItem("loggedInUser"));
+
+if (!loggedInUser) {
+    window.location = "/login/login.html";
+}
+
+let userNameEl = document.getElementById("userName");
+if (userNameEl && loggedInUser) {
+    userNameEl.innerText = loggedInUser.name;
+}
+
 /* ================= LOAD LEADERBOARD ================= */
 
 function loadLeaderboard(){
@@ -95,7 +107,7 @@ function loadLeaderboard(){
 
                 <td>${player.name}</td>
 
-                <td>${player.matches}</td>
+               <td>${player.matches_played}</td>
 
                 <td>${player.runs}</td>
 
