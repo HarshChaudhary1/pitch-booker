@@ -131,6 +131,14 @@ function loadLeaderboard(){
 
         console.log(err);
 
+         leaderboardBody.innerHTML = `
+        <tr>
+            <td colspan="7">
+                Failed to load leaderboard. Please try again.
+            </td>
+        </tr>
+    `;
+
     });
 
 }
