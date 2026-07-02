@@ -32,7 +32,7 @@ signupForm.addEventListener("submit", (e)=>{
 
         if(data.message === "Signup Success"){
 
-            window.location = "login.html";
+            window.location = "/login/login.html";
 
         }
 
