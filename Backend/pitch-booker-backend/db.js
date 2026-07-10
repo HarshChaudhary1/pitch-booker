@@ -5,19 +5,19 @@ const connection = mysql.createConnection({
     user: process.env.MYSQLUSER,
     password: process.env.MYSQLPASSWORD,
     database: process.env.MYSQLDATABASE,
-    port: process.env.MYSQLPORT
+    port: process.env.MYSQLPORT,
+    ssl: {
+        rejectUnauthorized: false
+    }
 });
 
 connection.connect((err) => {
-
-    if(err){
+    if (err) {
         console.log("Database Error ❌");
         console.log(err);
-    }
-    else{
+    } else {
         console.log("MySQL Connected ✅");
     }
-
 });
 
 module.exports = connection;
